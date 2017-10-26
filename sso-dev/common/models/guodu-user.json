@@ -1,0 +1,34 @@
+{
+  "name": "GuoduUser",
+  "base": "UserBase",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/guodu_users"
+  },
+  "hidden": [
+    "password"
+  ],
+  "properties": {
+    "accountId": {
+      "type": "string",
+      "required": true,
+      "limit": 16
+    },
+    "disable": {
+      "type": "boolean",
+      "default": false
+    },
+    "token": {
+      "type": "string",
+      "required": true,
+      "limit": 64
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

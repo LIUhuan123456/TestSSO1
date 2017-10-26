@@ -1,0 +1,123 @@
+{
+  "name": "Sso",
+  "base": "User",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "hidden": [
+    "password",
+    "salt",
+    "ttl",
+    "created"
+  ],
+  "http": {
+    "path": "/sso"
+  },
+  "properties": {
+    "uid": {
+      "type": "number",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "dataType": "char",
+      "limit": 36
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "limit": 64
+    },
+    "product": {
+      "type": "string",
+      "required": true,
+      "limit": 64
+    },
+    "type": {
+      "type": "number",
+      "required": true,
+      "default": 100
+    },
+    "salt": {
+      "type": "string",
+      "required": true,
+      "limit": 64
+    },
+    "oid": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "pid": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "activated": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "loginable": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "status": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "locked": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "lockTTL": {
+      "type": "number",
+      "required": false
+    },
+    "whitelist": {
+      "type": "string",
+      "required": false
+    },
+    "disable": {
+      "type": "boolean",
+      "default": false
+    },
+    "pass_reset_time": {
+      "type": "number",
+      "default": 0
+    },
+    "create_time": {
+      "type": "number",
+      "required": true
+    },
+    "update_time": {
+      "type": "number",
+      "required": true
+    },
+    "email": false,
+    "realm": false,
+    "emailVerified": false,
+    "verificationToken": false,
+    "username": false
+  },
+  "validations": [],
+  "relations": {
+    "identities": {
+      "type": "hasMany",
+      "model": "userIdentity",
+      "foreignKey": "userId"
+    },
+    "credentials": {
+      "type": "hasMany",
+      "model": "userCredential",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,67 @@
+{
+  "name": "UserInfo",
+  "base": "UserBase",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/users"
+  },
+  "properties": {
+    "xing": {
+      "type": "string",
+      "dataType": "char",
+      "limit": 36
+    },
+    "name": {
+      "type": "string",
+      "dataType": "char",
+      "limit": 36
+    },
+    "inited": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "isGuest": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "accountStatus": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "riskType": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "disable": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "org": {
+      "type": "belongsTo",
+      "model": "Org",
+      "foreignKey": "oid"
+    },
+    "planner": {
+      "type": "belongsTo",
+      "model": "Planner",
+      "foreignKey": "uid"
+    },
+    "accounts": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "uid"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,50 @@
+{
+  "name": "PhoneUser",
+  "plural": "PhoneUsers",
+  "base": "UserBase",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "hidden": [
+    "password",
+    "smscode"
+  ],
+  "properties": {
+    "area": {
+      "type": "string",
+      "required": true,
+      "dataType": "varchar",
+      "limit": 8
+    },
+    "num": {
+      "type": "string",
+      "required": true,
+      "dataType": "varchar",
+      "limit": 16
+    },
+    "xing": {
+      "type": "string",
+      "dataType": "varchar",
+      "limit": 36
+    },
+    "name": {
+      "type": "string",
+      "dataType": "varchar",
+      "limit": 36
+    },
+    "email": {
+      "type": "string",
+      "dataType": "varchar",
+      "limit": 128
+    },
+    "disable": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

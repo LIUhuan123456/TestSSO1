@@ -1,0 +1,96 @@
+{
+  "name": "Org",
+  "base": "Base",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/orgs"
+  },
+  "properties": {
+    "oid": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "name": {
+      "type": "string",
+      "limit": 64,
+      "default": " "
+    },
+    "displayName": {
+      "type": "string",
+      "limit": 64,
+      "default": " "
+    },
+    "region": {
+      "type": "string",
+      "limit": 64,
+      "default": "all"
+    },
+    "type": {
+      "type": "number",
+      "default": 0
+    },
+    "contact": {
+      "type": "string",
+      "limit": 512,
+      "default": " "
+    },
+    "address": {
+      "type": "string",
+      "limit": 512,
+      "default": " "
+    },
+    "host": {
+      "type": "string",
+      "limit": 32,
+      "default": " "
+    },
+    "logo": {
+      "type": "string",
+      "default": " "
+    },
+    "layout": {
+      "type": "string",
+      "limit": 2048,
+      "default": " "
+    },
+    "approve_mode": {
+      "type": "number",
+      "default": 0
+    },
+    "approve_timeout": {
+      "type": "number"
+    },
+    "approve_auto": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "planners": {
+      "type": "hasMany",
+      "model": "Planner",
+      "foreignKey": "oid"
+    },
+    "clients": {
+      "type": "hasMany",
+      "model": "Sso",
+      "foreignKey": "oid"
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": "oid"
+    },
+    "settings": {
+      "type": "hasOne",
+      "model": "OrgSettings",
+      "foreignKey": "oid"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

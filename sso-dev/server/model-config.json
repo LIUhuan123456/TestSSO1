@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models",
+      "../node_modules/loopback-component-passport/lib/models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mydb",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mydb",
+    "public": false
+  },
+  "Sso": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "Org": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "Planner": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "EmailUser": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "myEmailDataSource"
+  },
+  "Base": {
+    "dataSource": "db",
+    "public": false
+  },
+  "HuarunUser": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "AlgoProduct": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "GuoduUser": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "Product": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "UserInfo": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "LoginHistory": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "AdminUser": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "userCredential": {
+    "dataSource": "mydb",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "mydb",
+    "public": false
+  },
+  "PhoneUser": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "APIACL": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "InvitedUser": {
+    "dataSource": "mydb",
+    "public": true
+  }
+}

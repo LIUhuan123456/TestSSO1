@@ -1,0 +1,29 @@
+{
+  "name": "UserBase",
+  "base": "Base",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "uid": {
+      "type": "number",
+      "id": true,
+      "required": true
+    },
+    "pid": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "oid": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

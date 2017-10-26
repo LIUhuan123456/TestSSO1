@@ -1,0 +1,77 @@
+{
+  "name": "AlgoProduct",
+  "base": "Base",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/algo_products"
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "limit": 16
+    },
+    "oid": {
+      "type": "number",
+      "required": true
+    },
+    "productId": {
+      "type": "number",
+      "required": true
+    },
+    "algoType": {
+      "type": "number",
+      "required": true
+    },
+    "driftThreshold": {
+      "type": "number",
+      "default": 5,
+      "dataType": "decimal",
+      "precision": 4,
+      "scale": 2
+    },
+    "currency": {
+      "type": "string",
+      "required": true,
+      "limit": 3
+    },
+    "riskGradings": {
+      "type": "object",
+      "required": true,
+      "default": {}
+    },
+    "brokerId": {
+      "type": "number",
+      "required": true
+    },
+    "accountFlag": {
+      "type": "number",
+      "required": true
+    },
+    "minFunding": {
+      "type": "number",
+      "required": true
+    },
+    "upgrade_frequency": {
+      "type": "number",
+      "required": true
+    },
+    "fee_rate": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "product": {
+      "type": "belongsTo",
+      "model": "Product",
+      "foreignKey": "productId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Base",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "create_time": {
+      "type": "number",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "update_time": {
+      "type": "number",
+      "required": true,
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

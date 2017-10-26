@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"> -->
+    <style>
+    html {overflow-y:scroll;}
+    body {margin:0; padding:29px00; font:12px;background:#ffffff;}
+    div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;}
+    table,td,tr,th{font-size:12px;}
+    li{list-style-type:none;}
+    img{vertical-align:top;border:0;}
+    ol,ul {list-style:none;}
+    h1,h2,h3,h4,h5,h6{font-size:12px; font-weight:normal;}
+    address,cite,code,em,th {font-weight:normal; font-style:normal;}
+    body {
+        font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", HelveticaNeue, "Helvetica", "roboto", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    .header-name {
+        position: absolute;
+        left: 66px;
+        top: 23px;
+        height: 84px;
+        width: 112px;
+        line-height: 84px;
+        background: url('https://static.aqumon.com/email/img/gray_logo.png') center no-repeat;
+        background-size: contain;
+        text-align: center;
+    }
+
+
+
+    .expired {
+        margin-top: 230px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+        .expired {
+            flex-direction: row;
+        }
+    }
+
+    .expired .title {
+        font-size: 18px;
+        color:#8c8c8c;
+        letter-spacing: -0.43px;
+        text-align: center;
+    }
+
+    .expired .title-large {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        .expired .title {
+            display: none;
+        }
+        .expired .title-large {
+            display: block;
+            font-size: 24px;
+            color: #8c8c8c;
+            letter-spacing: 0;
+            text-align: left;
+            margin-bottom: 17px;
+            margin-top: -6px;
+        }
+    }
+
+    .expired .error {
+        margin: 37px auto;
+        background: url('https://static.aqumon.com/email/img/expired.png') center no-repeat;
+        /*background: url('../img/expired.png') center no-repeat;*/
+        background-size: contain;
+        width: 102px;
+        height: 80px;
+    }
+
+    @media (min-width: 768px) {
+        .expired .error {
+            margin: 88px 22px;
+        }
+    }
+
+    .expired-message {
+        padding-top: 17px;
+        font-size: 14px;
+        color: #8c8c8c;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .expired-message {
+            padding-top: 97px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .expired-message {
+            font-size: 18px;
+        }
+    }
+
+    .expired-message a {
+        color: #4b91e2;
+    }
+
+    </style>
+</head>
+
+<body translate="no">
+    <div class="header">
+        <p class="header-name"></p>
+    </div>
+    <div class="expired">
+        <div class="title">{{title}}</div>
+        <div class="error"></div>
+        <div class="expired-message">
+            <div class="title-large">{{title}}</div>
+            {{forget1}}<a href="{{link}}">{{forget2}}</a>{{forget3}}
+        </div>
+    </div>
+</body>
+
+</html>

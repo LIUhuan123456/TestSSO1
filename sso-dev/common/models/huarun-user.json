@@ -1,0 +1,40 @@
+{
+  "name": "HuarunUser",
+  "base": "UserBase",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/huarun_users"
+  },
+  "properties": {
+    "xing": {
+      "type": "string",
+      "required": true,
+      "limit": 8
+    },
+    "gender": {
+      "type": "string",
+      "required": true,
+      "limit": 4
+    },
+    "clientNumber": {
+      "type": "string",
+      "required": false,
+      "limit": 32
+    },
+    "disable": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasAccount": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

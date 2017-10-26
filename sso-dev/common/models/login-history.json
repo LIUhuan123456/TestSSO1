@@ -1,0 +1,55 @@
+{
+  "name": "LoginHistory",
+  "base": "Base",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "uid": {
+      "type": "number",
+      "required": false
+    },
+    "successful": {
+      "type": "boolean",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": false,
+      "limit": 64
+    },
+    "product": {
+      "type": "string",
+      "required": true,
+      "limit": 64
+    },
+    "ip": {
+      "type": "string",
+      "required": false,
+      "default": 32
+    },
+    "location": {
+      "type": "string",
+      "required": false
+    },
+    "platform": {
+      "type": "string",
+      "required": false
+    },
+    "comments": {
+      "type": "string",
+      "required": false,
+      "limit": 128
+    },
+    "additional": {
+      "type": "string",
+      "required": false,
+      "limit": 1024
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Planner",
+  "base": "Base",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "hidden": [
+    "password"
+  ],
+  "http": {
+    "path": "/planners"
+  },
+  "properties": {
+    "pid": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
+    "name": {
+      "type": "string",
+      "limit": 64,
+      "default": " "
+    },
+    "uid": {
+      "type": "number",
+      "required": true
+    },
+    "oid": {
+      "type": "number",
+      "required": true
+    },
+    "disable": {
+      "type": "boolean",
+      "default": false
+    },
+    "office": {
+      "type": "string",
+      "required": false,
+      "limit": 12,
+      "default": " "
+    }
+  },
+  "validations": [],
+  "relations": {
+    "clients": {
+      "type": "hasMany",
+      "model": "Sso",
+      "foreignKey": "pid"
+    },
+    "huaruns": {
+      "type": "hasMany",
+      "model": "HuarunUser",
+      "foreignKey": "pid"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

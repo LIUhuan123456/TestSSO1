@@ -1,0 +1,28 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "myEmailDataSource": {
+    "name": "myEmailDataSource",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtpdm.aliyun.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "info@mail.aqumon.com",
+          "pass": "MAGuser123"
+        }
+      }
+    ]
+  },
+  "account": {
+    "name": "account",
+    "connector": "rest",
+    "debug": false,
+    "baseURL": "http://test.aqumon.com/v1/user"
+  }
+}

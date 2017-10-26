@@ -1,0 +1,37 @@
+{
+  "name": "AdminUser",
+  "base": "EmailUser",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/admin_users"
+  },
+  "properties": {
+    "uiModules": {
+      "type": "string",
+      "required": false,
+      "limit": 2048
+    },
+    "privilege": {
+      "type": "string",
+      "required": false,
+      "limit": 2048
+    },
+    "isGod": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "roles": {
+      "type": "string",
+      "required": false,
+      "limit": 2048
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

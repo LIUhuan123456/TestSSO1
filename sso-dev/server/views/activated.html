@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<style>
+	#count-down{
+    color:red
+  }
+	.wrapper{
+		text-align:center;
+		margin:0 auto;
+		margin-top: 150px;
+	}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <h1>Thank You</h1>
+
+  <p>
+    Thanks for activation. Please login.
+  </p>
+  <p>
+    After <span id="count-down">5</span>s, you will be redirected to <a href="<%= redirectTo %>">login</a> page.
+  </p>
+</div>
+<script>
+  var countDownElem = document.getElementById("count-down");
+  var countDownNum = parseInt(countDownElem.innerText, 10);
+  var iv = setInterval(function(){
+    countDownNum--;
+	  countDownElem.innerText = countDownNum;
+    if(countDownNum===0){
+      clearInterval(iv);
+      location.href = '<%= redirectTo %>';
+    }
+  }, 1000);
+</script>
+</body>
+</html>

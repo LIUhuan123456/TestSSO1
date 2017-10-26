@@ -1,0 +1,50 @@
+{
+  "name": "EmailUser",
+  "base": "UserBase",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/email_users"
+  },
+  "hidden": [
+    "id",
+    "password",
+    "verificationToken"
+  ],
+  "properties": {
+    "xing": {
+      "type": "string",
+      "dataType": "char",
+      "limit": 36
+    },
+    "name": {
+      "type": "string",
+      "dataType": "char",
+      "limit": 36
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "limit": 128
+    },
+    "emailVerified": {
+      "type": "boolean",
+      "default": false
+    },
+    "disable": {
+      "type": "boolean",
+      "default": false
+    },
+    "verificationToken": {
+      "type": "string",
+      "limit": 128,
+      "default": "default"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

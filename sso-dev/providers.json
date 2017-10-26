@@ -1,0 +1,44 @@
+{
+    "local": {
+        "provider": "local",
+        "module": "passport-local",
+        "usernameField": "username",
+        "passwordField": "password",
+        "authPath": "/auth/local",
+        "successRedirect": "/auth/account",
+        "failureRedirect": "/local",
+        "failureFlash": true
+    },
+    "github-login": {
+        "provider": "github",
+        "module": "passport-github",
+        "profileFields": ["gender", "link", "locale", "name", "timezone",
+            "verified", "email", "updated_time"
+        ],
+        "clientID": "25094b36509da119a92c",
+        "clientSecret": "bb69df5a6d01bb345d38668424905ab839cda711",
+        "callbackURL": "/v1/auth/github/callback",
+        "authPath": "/v1/auth/github",
+        "callbackPath": "/v1/auth/github/callback",
+        "successRedirect": "/oauthOK",
+        "failureRedirect": "/login",
+        "scope": ["email"],
+        "failureFlash": true
+    },
+    "google-login": {
+        "provider": "google",
+        "module": "passport-google-oauth",
+        "strategy": "OAuth2Strategy",
+        "clientID": "247947948528-1neor36dtbphhu0nig7lgkvbg2cvdhff.apps.googleusercontent.com",
+        "clientSecret": "wDJtE0EtLhNMvPZh7lkIxxc7",
+        "callbackURL": "/v1/auth/google/callback",
+        "authPath": "/v1/auth/*/google",
+        "callbackPath": "/v1/auth/*/google/callback",
+        "successRedirect": "/#!/home",
+        "failureRedirect": "/login",
+        "scope": ["email", "profile"],
+        "tokenURL": "http://www.googleapis.com/oauth2/v4/token",
+        "userProfileURL": "http://www.googleapis.com/plus/v1/people/me",
+        "failureFlash": true
+    }
+}

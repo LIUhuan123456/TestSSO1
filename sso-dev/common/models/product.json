@@ -1,0 +1,67 @@
+{
+  "name": "Product",
+  "base": "Base",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "limit": 16
+    },
+    "oid": {
+      "type": "number",
+      "required": true
+    },
+    "oname": {
+      "type": "string",
+      "required": true,
+      "limit": 64
+    },
+    "host": {
+      "type": "string",
+      "required": true,
+      "limit": 64
+    },
+    "questionnaireId": {
+      "type": "number",
+      "default": 0
+    },
+    "baseCurrency": {
+      "type": "string",
+      "required": true,
+      "limit": 3
+    },
+    "q_valid_days": {
+      "type": "number",
+      "required": true,
+      "dataType": "int",
+      "default": 365,
+      "limit": 4
+    },
+    "q_alert_before_expiry": {
+      "type": "number",
+      "required": true,
+      "dataType": "int",
+      "default": 14,
+      "limit": 4
+    }
+  },
+  "validations": [],
+  "relations": {
+    "org": {
+      "type": "belongsTo",
+      "model": "Org",
+      "foreignKey": "oid"
+    },
+    "algoProducts": {
+      "type": "hasMany",
+      "model": "AlgoProduct",
+      "foreignKey": "productId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
